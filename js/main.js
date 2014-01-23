@@ -5,5 +5,3 @@ $(document).ready(function(){
 		$(".background").css("background-color", background);
 	});
 });
-
-

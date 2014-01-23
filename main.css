@@ -17,6 +17,7 @@ div > input {
 
 .background{
 	background-color: #999;
+	z-index: 1;
 }
 
 input[type=text], input[type=email], input[type=password], textarea {
@@ -39,8 +40,17 @@ input[type=text], input[type=email], input[type=password], textarea {
 }
 
 p {
-	text-shadow: 0px 0px 10px #ccc;
+	text-shadow: 0px 0px 10px #2B303B;
 	font-size: 40px;
 	font-family: 'Belgrano', serif;
 	color: white;
+}
+
+.previous {
+	border: 2px solid white;
+	height: 100px;
+	margin-top: 100px;
+	width: 100%;
+	z-index: 3;
+	background-color: #fff;
 }
