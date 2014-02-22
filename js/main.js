@@ -1,14 +1,27 @@
+var fave = new Object();
+
 $(document).ready(function(){
+  $.cookie.json = true;
+  $('.favorite').append($.cookie("color"));
 
 	$("#bck-grabber").keyup(function(){
+    original = $('#bck-grabber').val();
 		var background = $("#bck-grabber").val();
 		$(".background").css("background-color", background);
     valuecheck();
 	});
 
+  $('.fave-color').click(function(){
+    $('.favorite').empty();
+    fave.color = original;
+    var myFavorite = JSON.stringify(fave);
+    console.log(fave);
+    $.cookie("color", original);
+    $('.favorite').append($.cookie("color"));
+  });
+
   $('.rember-color').click(function(){
     var color = Color($('#bck-grabber').val());
-    var original = $('#bck-grabber').val();
     $('.box').fadeIn();
 
     var light = color.lighten(0.5);
@@ -18,7 +31,6 @@ $(document).ready(function(){
 
     var dark = color.darken(0.5);
     $('<div class="bg">' + dark.hexString() + " Darker" + '</div>').css("background-color", dark.hexString()).appendTo('.box');
-
 
     $(".background").css("background-color", "#555");
   });
