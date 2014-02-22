@@ -12,7 +12,7 @@ $(document).ready(function(){
     $('.box').fadeIn();
 
     var light = color.lighten(0.2);
-    $('<div class="bg">' + light.hexString() + " light 1" + '</div>').css("background-color", light.hexString()).appendTo('.box');
+    $('<div class="bg">' + light.hexString() + " Lighter" + '</div>').css("background-color", light.hexString()).appendTo('.box');
 
     $('<div class="bg">' + original + " Original" + '</div>').css("background-color", original).appendTo('.box');
 
