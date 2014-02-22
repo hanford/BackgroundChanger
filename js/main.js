@@ -7,14 +7,19 @@ $(document).ready(function(){
 	});
 
   $('.rember-color').click(function(){
-    var remember = $('#bck-grabber').val();
+    var color = Color($('#bck-grabber').val());
+    var original = $('#bck-grabber').val();
     $('.box').fadeIn();
     
-    $('<li class="bg">' + remember + '</li>')
-      .css("background-color", remember)
-      .appendTo('.box');
+    var light = color.alpha(0.5).lighten(0.5);
 
-    $(".background").css("background-color", "#999");
+    $('<div class="bg">' + original + " Original" + '</div>').css("background-color", original).appendTo('.box');
+    $('<div class="bg">' + light.hexString() + " Lighter" + '</div>').css("background-color", light.hexString()).appendTo('.box');
+
+    var dark = color.alpha(0.5).darken(0.5);
+    $('<div class="bg">' + dark.hexString() + " Darker" + '</div>').css("background-color", dark.hexString()).appendTo('.box');
+
+    $(".background").css("background-color", "#555");
   });
 
   valuecheck();
