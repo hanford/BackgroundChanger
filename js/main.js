@@ -10,14 +10,15 @@ $(document).ready(function(){
     var color = Color($('#bck-grabber').val());
     var original = $('#bck-grabber').val();
     $('.box').fadeIn();
-    
-    var light = color.alpha(0.5).lighten(0.5);
+
+    var light = color.lighten(0.2);
+    $('<div class="bg">' + light.hexString() + " light 1" + '</div>').css("background-color", light.hexString()).appendTo('.box');
 
     $('<div class="bg">' + original + " Original" + '</div>').css("background-color", original).appendTo('.box');
-    $('<div class="bg">' + light.hexString() + " Lighter" + '</div>').css("background-color", light.hexString()).appendTo('.box');
 
     var dark = color.alpha(0.5).darken(0.5);
     $('<div class="bg">' + dark.hexString() + " Darker" + '</div>').css("background-color", dark.hexString()).appendTo('.box');
+
 
     $(".background").css("background-color", "#555");
   });
