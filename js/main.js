@@ -32,7 +32,7 @@ $(document).ready(function(){
     $.removeCookie('color');
     $('.box').removeClass('shadow');
     $('.box').slideUp(400).empty();
-    $('.favorite').empty();
+    $('.favorite-text').empty();
   });
 
   $(".background").css("background-color", "#555");
