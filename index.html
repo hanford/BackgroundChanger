@@ -7,16 +7,20 @@
 <link rel="stylesheet" type="text/css" href="css/base.css">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 <body class="background">
   <div class="container">
     <p class="title textshadow"></p>
     <p class="none hexi-text">You're going to need a <b>#</b></p>
   	<input id="bck-grabber" type="text" value="#" maxlength="7" placeholder="Hexidecimal">
-    <div class="box">
+    <div class="space-taker"></div>
+    <div class="box shadow">
       
     </div>
-    <div class="favorite-box">
-    Favorite: <span class="favorite"></span>
+    <!-- <div><i class="fa fa-plus"></i> <i class="fa fa-minus"></i></div> -->
+    <div class="none favorite-box">
+    <button class="bttn bttn-danger bttn-small remove-cookie">Clear</button>
+    <p>Saving, will only keep your last color <span class="favorite"></span>!</p>
       
     </div>
   </div>

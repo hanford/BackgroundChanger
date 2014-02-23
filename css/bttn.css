@@ -26,7 +26,7 @@ button, .reset-anchor {
   cursor: pointer;
 }
 
-.bttn:hover {
+.bttn {
   box-shadow: inset 0 -2px 0 rgba(0,0,0,.27);
   transition: all 0.1s ease-in-out;
 }

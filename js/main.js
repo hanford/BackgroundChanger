@@ -3,6 +3,7 @@ $(document).ready(function(){
   cookie = $.cookie("color");
 
   if (cookie != undefined) {
+    $('.favorite-box').toggle();
     $('.favorite').append(cookie);
     var color = Color(cookie);
     treat(cookie);
@@ -25,6 +26,13 @@ $(document).ready(function(){
         treat(original);
       }
     }
+  });
+
+  $('.remove-cookie').click(function(){
+    $.removeCookie('color');
+    $('.box').removeClass('shadow');
+    $('.box').slideUp(400).empty();
+    $('.favorite').empty();
   });
 
   $(".background").css("background-color", "#555");
