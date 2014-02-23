@@ -21,16 +21,17 @@ $(document).ready(function(){
 
   $(".background").css("background-color", "#555");
   valuecheck();
-  favecheck();
+  // favecheck();
 });
 
-function favecheck() {
-  if ($('.favorite').text() === "") {
-    console.log('yes');
-  } else {
-    treat($('.favorite').text());
-  }
-};
+// function favecheck() {
+//   if ($('.favorite').text() === "") {
+//     console.log('yes');
+//   } else {
+//     var color = Color($('.favorite').text());
+//     treat();
+//   }
+// };
 
 function treat() {
   var color = Color($('#bck-grabber').val());
