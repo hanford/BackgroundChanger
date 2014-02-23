@@ -21,6 +21,8 @@ $(document).ready(function(){
       if(e.keyCode == 13) {
         e.preventDefault();
         $('.favorite').empty();
+        $('.favorite-box').show();
+        $('.favorite-text').show();
         $.cookie("color", original);
         $('.favorite').append($.cookie("color"));
         treat(original);
@@ -32,7 +34,8 @@ $(document).ready(function(){
     $.removeCookie('color');
     $('.box').removeClass('shadow');
     $('.box').slideUp(400).empty();
-    $('.favorite-text').empty();
+    $('.favorite').empty();
+    $('.favorite-text').toggle();
   });
 
   $(".background").css("background-color", "#555");
