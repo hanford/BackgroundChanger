@@ -81,21 +81,21 @@ p {
 }
 
 .fa {
-	font-size: 37px;
+	font-size: 18px;
 	color: rgba(255, 255, 255, 0.3);
 	cursor: pointer;
 }
 
 .hella-dark {
 	position: absolute;
-	right: 33%;
-	margin-top: 3px;
+	right: 34%;
+	margin-top: 11px;
 }
 
 .hella-light {
 	position: absolute;
-	left: 33%;
-	margin-top: 3px;
+	left: 34%;
+	margin-top: 11px;
 }
 
 .bttn-transparent {

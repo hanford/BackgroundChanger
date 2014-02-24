@@ -1,6 +1,7 @@
 $(document).ready(function(){
   $.cookie.json = true;
   cookie = $.cookie("color");
+  fadebtn = $('.fade-in-bttn');
 
   if (cookie != undefined) {
     $('.favorite-box').toggle();
@@ -22,7 +23,7 @@ $(document).ready(function(){
         e.preventDefault();
         $('.favorite').empty();
         $('.remove-cookie').fadeIn();
-        // $('.bttn-hide').slideDown();
+        fadebtn.fadeIn();
         $('.favorite-box').show();
         $('.favorite-text').show();
         $.cookie("color", original);
@@ -47,12 +48,11 @@ $(document).ready(function(){
 
   $('.remove-cookie').click(function(){
     $.removeCookie('color');
-    $('.box').removeClass('shadow');
-    $('.fade-in-bttn').fadeOut();
-    $('.box').slideUp(400).empty();
+    fadebtn.fadeOut();
+    $('.box').removeClass('shadow').slideUp(400).empty();
     $('.favorite').empty();
     $('.favorite-text').toggle();
-    $('.remove-cookie').fadeOut(405);
+    $('.remove-cookie').fadeOut(402);
   });
 
   $(".background").css("background-color", "#123");
@@ -62,7 +62,6 @@ $(document).ready(function(){
 function treat(original) {
   color = Color(original);
   $('.box').fadeIn();
-  $('.fade-in-bttn').fadeIn();
   $('<div class="bg">' + original + " Saved" + '</div>')
   .css("background-color", original)
   .appendTo('.box');
