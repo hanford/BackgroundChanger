@@ -21,6 +21,7 @@ $(document).ready(function(){
       if(e.keyCode == 13) {
         e.preventDefault();
         $('.favorite').empty();
+        // $('.bttn-hide').slideDown();
         $('.favorite-box').show();
         $('.favorite-text').show();
         $.cookie("color", original);
@@ -38,12 +39,12 @@ $(document).ready(function(){
     $('.favorite-text').toggle();
   });
 
-  $(".background").css("background-color", "#555");
+  $(".background").css("background-color", "#123");
   valuecheck();
 });
 
 function treat(original) {
-  var color = Color(original);
+  color = Color(original);
   $('.box').fadeIn();
   var light = color.lighten(0.5);
   $('<div class="bg">' + light.hexString() + " Lighter" + '</div>')
@@ -57,6 +58,28 @@ function treat(original) {
   .css("background-color", dark.hexString())
   .appendTo('.box');
 };
+
+// function lighten() {
+//   var lighter = color.lighten(0.1);
+//   if (lighter.hexString() === "#FFFFFF"){
+
+//   } else {
+//   $('<div class="bg">' + lighter.hexString() + '</div>')
+//   .css("background-color", lighter.hexString())
+//   .appendTo('.box');
+//   }
+// }
+
+// function darken() {
+//   var darker = color.darken(0.1);
+//   if (darker.hexString() === "#000000"){
+
+//   } else {
+//   $('<div class="bg">' + darker.hexString() + '</div>')
+//   .css("background-color", darker.hexString())
+//   .appendTo('.box');
+//   }
+// }
 
 
 function valuecheck() {
