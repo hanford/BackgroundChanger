@@ -21,13 +21,11 @@ $(document).ready(function(){
     if (colorLength === 4 || colorLength === 7) {
       if(e.keyCode == 13) {
         e.preventDefault();
-        $('.favorite').empty();
+        $('.box').empty();
         $('.remove-cookie').fadeIn();
         fadebtn.fadeIn();
         $('.favorite-box').show();
-        $('.favorite-text').show();
         $.cookie("color", original);
-        $('.favorite').append($.cookie("color"));
         treat(original);
       }
     }
