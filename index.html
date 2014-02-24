@@ -13,13 +13,18 @@
     <p class="title textshadow"></p>
     <p class="none hexi-text">You're going to need a <b>#</b></p>
   	<input id="bck-grabber" type="text" value="#" maxlength="7" placeholder="Hexidecimal">
+    <div class="none bttn-hide">
+    <button class="bttn bttn-transparent bttn-large" onclick="lighten()"><i class="fa fa-plus"></i></button>
+    <button class="bttn bttn-transparent bttn-large" onclick="darken()"><i class="fa fa-minus"></i></button>
+    </div>
     <div class="space-taker"></div>
     <div class="box shadow">
       
     </div>
     <!-- <div><i class="fa fa-plus"></i> <i class="fa fa-minus"></i></div> -->
     <div class="none favorite-box">
-    <button class="bttn bttn-danger bttn-small remove-cookie">Clear</button>
+    <br />
+    <button class="bttn bttn-transparent bttn-large remove-cookie">Clear</button>
     <p class="favorite-text">Saving, will only keep your last color <span class="favorite"></span>!</p>
       
     </div>
