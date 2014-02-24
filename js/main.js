@@ -21,6 +21,7 @@ $(document).ready(function(){
       if(e.keyCode == 13) {
         e.preventDefault();
         $('.favorite').empty();
+        $('.remove-cookie').fadeIn();
         // $('.bttn-hide').slideDown();
         $('.favorite-box').show();
         $('.favorite-text').show();
@@ -31,12 +32,27 @@ $(document).ready(function(){
     }
   });
 
+  $('.hella-dark').click(function(){
+    for (var i = 0; i < 5; i++) {
+      darken();
+    }
+  });
+
+    $('.hella-light').click(function(){
+    for (var i = 0; i < 20; i++) {
+      lighten();
+    }
+  });
+
+
   $('.remove-cookie').click(function(){
     $.removeCookie('color');
     $('.box').removeClass('shadow');
+    $('.fade-in-bttn').fadeOut();
     $('.box').slideUp(400).empty();
     $('.favorite').empty();
     $('.favorite-text').toggle();
+    $('.remove-cookie').fadeOut(405);
   });
 
   $(".background").css("background-color", "#123");
@@ -46,40 +62,33 @@ $(document).ready(function(){
 function treat(original) {
   color = Color(original);
   $('.box').fadeIn();
-  var light = color.lighten(0.5);
-  $('<div class="bg">' + light.hexString() + " Lighter" + '</div>')
-  .css("background-color", light.hexString())
-  .appendTo('.box');
-  $('<div class="bg">' + original + " Original" + '</div>')
+  $('.fade-in-bttn').fadeIn();
+  $('<div class="bg">' + original + " Saved" + '</div>')
   .css("background-color", original)
-  .appendTo('.box');
-  var dark = color.darken(0.5);
-  $('<div class="bg">' + dark.hexString() + " Darker" + '</div>')
-  .css("background-color", dark.hexString())
   .appendTo('.box');
 };
 
-// function lighten() {
-//   var lighter = color.lighten(0.1);
-//   if (lighter.hexString() === "#FFFFFF"){
+function lighten() {
+  var lighter = color.lighten(0.2);
+  if (lighter.hexString() === "#FFFFFF"){
 
-//   } else {
-//   $('<div class="bg">' + lighter.hexString() + '</div>')
-//   .css("background-color", lighter.hexString())
-//   .appendTo('.box');
-//   }
-// }
+  } else {
+  $('<div class="bg">' + lighter.hexString() + '</div>')
+  .css("background-color", lighter.hexString())
+  .appendTo('.box');
+  }
+}
 
-// function darken() {
-//   var darker = color.darken(0.1);
-//   if (darker.hexString() === "#000000"){
+function darken() {
+  var darker = color.darken(0.2);
+  if (darker.hexString() === "#040404"){
 
-//   } else {
-//   $('<div class="bg">' + darker.hexString() + '</div>')
-//   .css("background-color", darker.hexString())
-//   .appendTo('.box');
-//   }
-// }
+  } else {
+  $('<div class="bg">' + darker.hexString() + '</div>')
+  .css("background-color", darker.hexString())
+  .appendTo('.box');
+  }
+}
 
 
 function valuecheck() {
