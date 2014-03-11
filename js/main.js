@@ -5,7 +5,6 @@ $(document).ready(function(){
 
   if (cookie != undefined) {
     $('.favorite-box').toggle();
-    $('.favorite').append(cookie);
     var color = Color(cookie);
     treat(cookie);
   };
@@ -37,12 +36,11 @@ $(document).ready(function(){
     }
   });
 
-    $('.hella-light').click(function(){
+  $('.hella-light').click(function(){
     for (var i = 0; i < 20; i++) {
       lighten();
     }
   });
-
 
   $('.remove-cookie').click(function(){
     $.removeCookie('color');
@@ -60,7 +58,7 @@ $(document).ready(function(){
 function treat(original) {
   color = Color(original);
   $('.box').fadeIn();
-  $('<div class="bg">' + original + " Saved" + '</div>')
+  $('<div class="bg">' + original + '</div>')
   .css("background-color", original)
   .appendTo('.box');
 };
@@ -70,9 +68,9 @@ function lighten() {
   if (lighter.hexString() === "#FFFFFF"){
 
   } else {
-  $('<div class="bg">' + lighter.hexString() + '</div>')
-  .css("background-color", lighter.hexString())
-  .appendTo('.box');
+    $('<div class="bg">' + lighter.hexString() + '</div>')
+    .css("background-color", lighter.hexString())
+    .appendTo('.box');
   }
 }
 
@@ -81,9 +79,9 @@ function darken() {
   if (darker.hexString() === "#040404"){
 
   } else {
-  $('<div class="bg">' + darker.hexString() + '</div>')
-  .css("background-color", darker.hexString())
-  .appendTo('.box');
+    $('<div class="bg">' + darker.hexString() + '</div>')
+    .css("background-color", darker.hexString())
+    .appendTo('.box');
   }
 }
 
