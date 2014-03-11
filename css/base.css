@@ -106,4 +106,10 @@ p {
 
 .bttn-transparent:hover {
 	background-color: rgba(255, 255, 255, 0.25);
- }
+}
+
+.home-bttn {
+	font-size: 40px;
+	position: fixed;
+	top: 10px;
+}
