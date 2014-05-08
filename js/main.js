@@ -3,6 +3,11 @@ $(document).ready(function(){
   cookie = $.cookie("color");
   fadebtn = $('.fade-in-bttn');
 
+  $('input[autofocus]:visible:first').focus(function(e){
+    e.preventDefault();
+  });
+
+
   if (cookie != undefined) {
     $('.favorite-box').toggle();
     var color = Color(cookie);
@@ -30,13 +35,13 @@ $(document).ready(function(){
     }
   });
 
-  $('.hella-dark').click(function(){
+  $('.dark').click(function(){
     for (var i = 0; i < 5; i++) {
       darken();
     }
   });
 
-  $('.hella-light').click(function(){
+  $('.light').click(function(){
     for (var i = 0; i < 20; i++) {
       lighten();
     }
@@ -76,7 +81,7 @@ function lighten() {
 
 function darken() {
   var darker = color.darken(0.2);
-  if (darker.hexString() === "#040404"){
+  if (darker.hexString() === "#000000"){
 
   } else {
     $('<div class="bg">' + darker.hexString() + '</div>')
